@@ -19,6 +19,7 @@ class UzytkownikMenedzer{
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     string wczytajLinie();
+    void zapiszWszystkichUzytkownikowDoPliku();
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
@@ -26,8 +27,8 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
-
     int pobierzIdZalogowanegoUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif
