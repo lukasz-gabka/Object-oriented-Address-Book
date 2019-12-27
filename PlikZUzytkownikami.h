@@ -13,7 +13,6 @@ using namespace std;
 class PlikZUzytkownikami{
 
     const string nazwaPlikuZUzytkownikami;
-    //vector <Uzytkownik> uzytkownicy;
 
     bool czyPlikJestPusty();
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
@@ -24,7 +23,7 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
     string pobierzNazwePlikuZUzytkownikami();
-
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
 };
 
 #endif

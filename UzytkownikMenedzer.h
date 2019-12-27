@@ -19,7 +19,6 @@ class UzytkownikMenedzer{
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     string wczytajLinie();
-    void zapiszWszystkichUzytkownikowDoPliku();
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
