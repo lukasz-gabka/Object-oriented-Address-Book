@@ -46,7 +46,7 @@ int main()
             switch (wybor)
             {
             case '1':
-
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
 

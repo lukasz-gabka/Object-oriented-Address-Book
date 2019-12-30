@@ -23,7 +23,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 }
 
 void KsiazkaAdresowa::wylogujUzytkownika(){
-uzytkownikMenedzer.wylogujUzytkownika();
+    uzytkownikMenedzer.wylogujUzytkownika();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
@@ -90,4 +90,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     wybor = wczytajZnak();
 
     return wybor;
+}
+
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatMenedzer.dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
