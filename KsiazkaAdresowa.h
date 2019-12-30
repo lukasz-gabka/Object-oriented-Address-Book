@@ -29,6 +29,8 @@ public:
     void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
+
+    void wypiszAdresatow();
 };
 
 #endif

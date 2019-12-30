@@ -6,12 +6,14 @@
 #include <windows.h>
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
 class UzytkownikMenedzer{
     int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
+    AdresatMenedzer adresatMenedzer;
     vector <Uzytkownik> uzytkownicy;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -25,7 +27,6 @@ public:
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    void wylogujUzytkownika();
 
     void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AdresatMenedzer.h""
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
@@ -53,4 +53,24 @@ vector <Adresat> AdresatMenedzer::pobierzAdresatow(){
 
 int AdresatMenedzer::pobierzIdOstatniegoAdresata(){
     return idOstatniegoAdresata;
+}
+void AdresatMenedzer::wypiszAdresatow(){
+    for(int i = 0; i < adresaci.size(); i++){
+        cout << adresaci[i].pobierzId() << endl;
+        cout << adresaci[i].pobierzIdUzytkownika() << endl;
+        cout << adresaci[i].pobierzImie() << endl;
+        cout << adresaci[i].pobierzNazwisko() << endl;
+        cout << adresaci[i].pobierzNumerTelefonu() << endl;
+        cout << adresaci[i].pobierzEmail() << endl;
+        cout << adresaci[i].pobierzAdres() << endl << endl;
+    }
+    system("pause");
+}
+
+void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika){
+    idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
+}
+
+void AdresatMenedzer::usunAdresatow(){
+    adresaci.clear();
 }
