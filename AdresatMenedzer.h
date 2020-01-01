@@ -18,6 +18,7 @@ class AdresatMenedzer{
     int idOstatniegoAdresata;
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
     AdresatMenedzer();
@@ -27,6 +28,7 @@ public:
     void wypiszAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunAdresatow();
+    void wyswietlWszystkichAdresatow();
 };
 
 #endif

@@ -101,3 +101,7 @@ void KsiazkaAdresowa::dodajAdresata(){
 void KsiazkaAdresowa::wypiszAdresatow(){
     adresatMenedzer.wypiszAdresatow();
 }
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
