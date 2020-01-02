@@ -19,6 +19,7 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
     do {
         cout << "Podaj login: ";
         uzytkownik.ustawLogin(MetodyPomocnicze::wczytajLinie());
+        uzytkownik.ustawLogin(MetodyPomocnicze::wczytajLinie());
     } while(czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
@@ -50,10 +51,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow(){
             cout << uzytkownicy[i].pobierzLogin() <<endl;
             cout << uzytkownicy[i].pobierzHaslo() <<endl;
         }
-}
-
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku(){
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 int UzytkownikMenedzer::logowanieUzytkownika()
@@ -117,4 +114,17 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 
 void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika){
     idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
+    if (idZalogowanegoUzytkownika > 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void UzytkownikMenedzer::wylogujUzytkownika(){
+    idZalogowanegoUzytkownika = 0;
 }

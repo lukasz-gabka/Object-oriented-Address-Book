@@ -4,18 +4,20 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
+      <x>0</x>
       <y>10</y>
       <w>320</w>
-      <h>340</h>
+      <h>370</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 -
 - UzytkownikMenedzer: uzytkownikMenedzer
-- AdresatMenedzer: adresatMenedzer
+- AdresatMenedzer: *adresatMenedzer
+- NAZWA_PLIKU_Z_ADRESATAMI: string
 - wybor: char
 -
 + KsiazkaAdresowa();
++ ~KsiazkaAdresowa();
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): int
 + wypiszWszystkichUzytkownikow(): void
@@ -36,7 +38,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
+      <x>640</x>
       <y>10</y>
       <w>230</w>
       <h>90</h>
@@ -51,10 +53,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
+      <x>320</x>
       <y>10</y>
       <w>320</w>
-      <h>250</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 -
@@ -68,6 +70,8 @@
 + wczytajUzytkownikowZPliku(): void
 + logowanieUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika(): void
++ wylogujUzytkownika(): void
+czyUzytkownikJestZalogowany(): bool
 - podajDaneNowegoUzytkownika(): Uzytkownik
 - pobierzIdNowegoUzytkownika(): int
 - czyIstniejeLogin(): bool</panel_attributes>
@@ -76,14 +80,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>260</y>
+      <x>320</x>
+      <y>280</y>
       <w>530</w>
       <h>180</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 -
-- nazwaPlikuZUzytkownikami: string
+- NAZWA_PLIKU_Z_UZYTKOWNIKAMI: string
 -
 + PlikZUzytkownikami();
 + zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string
@@ -98,7 +102,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
+      <x>640</x>
       <y>100</y>
       <w>380</w>
       <h>120</h>
@@ -116,8 +120,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>860</x>
-      <y>290</y>
+      <x>850</x>
+      <y>220</y>
       <w>220</w>
       <h>150</h>
     </coordinates>
@@ -136,21 +140,21 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
-      <y>440</y>
+      <x>0</x>
+      <y>460</y>
       <w>390</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 -
+- ID_ZALOGOWANEGO_UZYTKOWNIKA: int
 - adresaci: vector &lt;Adresat&gt;
 - PlikZAdresatami: plikZAdresatami
-- idOstatniegoAdresata: int
 -
 + AdresatMenedzer()
 + dodajAdresata(): int
 + pobierzAdresatow(): vector &lt;Adresat&gt;
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
+- wypiszAdresatow(): void
 + usunAdresatow(): void
 + wyswietlWszystkichAdresatow(): void
 - podajDaneNowegoAdresata: Adresat
@@ -160,14 +164,15 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>440</y>
+      <x>390</x>
+      <y>460</y>
       <w>520</w>
-      <h>190</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 -
-- nazwaPlikuZAdresatami: string
+- NAZWA_PLIKU_Z_ADRESATAMI: string
+- idOstatniegoAdresata: int
 -
 + PlikZAdresatami()
 + dopiszAdresataDoPliku(): void

@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    AdresatMenedzer adresatMenedzer;
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    AdresatMenedzer *adresatMenedzer;
 
     char wybor;
 
@@ -66,7 +66,7 @@ int main()
 
                 break;
             case '7':
-
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
                 ksiazkaAdresowa.wylogujUzytkownika();
