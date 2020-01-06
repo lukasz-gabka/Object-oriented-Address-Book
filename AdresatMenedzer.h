@@ -9,28 +9,38 @@
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "PlikZAdresatami.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class AdresatMenedzer{
+class AdresatMenedzer {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
-    : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+    AdresatMenedzer(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
     void dodajAdresata();
-    vector <Adresat> pobierzAdresatow();
     void wypiszAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunAdresatow();
     void wyswietlWszystkichAdresatow();
+    int usunAdresata();
+    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsunietegoAdresata);
+    void edytujAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+
+    vector <Adresat> pobierzAdresatow();
 };
 
 #endif
