@@ -5,7 +5,7 @@ using namespace std;
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::app);
+    plikTekstowy.open(pobierzNazwePliku().c_str(), ios::app);
 
     if (plikTekstowy.good() == true) {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
@@ -16,7 +16,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
             plikTekstowy << endl << liniaZDanymiUzytkownika ;
         }
     } else
-        cout << "Nie udalo sie otworzyc pliku " << NAZWA_PLIKU << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << pobierzNazwePliku() << " i zapisac w nim danych." << endl;
     plikTekstowy.close();
 }
 
@@ -36,7 +36,7 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
     fstream plikTekstowy;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
 
-    plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::in);
+    plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
 
     if (plikTekstowy.good() == true) {
         while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
@@ -77,7 +77,7 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 }
 
 string PlikZUzytkownikami::pobierzNazwePlikuZUzytkownikami() {
-    return NAZWA_PLIKU;
+    return pobierzNazwePliku();
 }
 
 void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy) {
@@ -85,7 +85,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
     string liniaZDanymiUzytkownika = "";
     vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
 
-    plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::out);
+    plikTekstowy.open(pobierzNazwePliku().c_str(), ios::out);
 
     if (plikTekstowy.good() == true) {
         for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++) {
@@ -99,7 +99,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
             liniaZDanymiUzytkownika = "";
         }
     } else {
-        cout << "Nie mozna otworzyc pliku " << NAZWA_PLIKU << endl;
+        cout << "Nie mozna otworzyc pliku " << pobierzNazwePliku() << endl;
     }
     plikTekstowy.close();
 }

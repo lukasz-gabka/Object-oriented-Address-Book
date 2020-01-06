@@ -208,7 +208,7 @@
     <coordinates>
       <x>294</x>
       <y>609</y>
-      <w>126</w>
+      <w>140</w>
       <h>77</h>
     </coordinates>
     <panel_attributes>PlikTekstowy
@@ -216,7 +216,8 @@
 - NAZWA_PLIKU: string
 -
 + PlikTekstowy()
-+ czyPlikJestPusty(): bool</panel_attributes>
++ czyPlikJestPusty(): bool
++ pobierzNazwePliku(): string</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
