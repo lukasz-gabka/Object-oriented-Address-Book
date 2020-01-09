@@ -76,10 +76,6 @@ void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogo
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 }
 
-void AdresatMenedzer::usunAdresatow() {
-    adresaci.clear();
-}
-
 void AdresatMenedzer::wyswietlWszystkichAdresatow() {
     system("cls");
     if (!adresaci.empty()) {

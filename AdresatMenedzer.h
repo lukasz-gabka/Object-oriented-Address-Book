@@ -32,7 +32,6 @@ public:
     void dodajAdresata();
     void wypiszAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void usunAdresatow();
     void wyswietlWszystkichAdresatow();
     int usunAdresata();
     void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsunietegoAdresata);
